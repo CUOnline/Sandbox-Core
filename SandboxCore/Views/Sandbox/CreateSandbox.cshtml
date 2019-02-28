@@ -1,0 +1,19 @@
+﻿@model SandboxCore.Models.SandboxViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    @if (Model.StatusCode == 403)
+    {
+        <p>
+            You are not authorized to create a sandbox.
+        </p>
+    }
+    else
+    {
+        <p>
+            Your sandbox course has been created. <a href='@string.Format($"{Model.BaseUrl}courses")' target="_parent">Go to the courses page</a> to view your new sandbox course.
+        </p>
+    }
+</div>
