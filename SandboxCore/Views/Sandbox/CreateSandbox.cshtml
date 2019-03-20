@@ -2,8 +2,9 @@
 @{
     ViewData["Title"] = "Index";
 }
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 
-<div class="row">
+<div class="alert alert-warning">
     @if (Model.StatusCode == 403)
     {
         <p>
@@ -12,8 +13,7 @@
     }
     else
     {
-        <p>
-            Your sandbox course has been created. <a href='@string.Format($"{Model.BaseUrl}courses")' target="_parent">Go to the courses page</a> to view your new sandbox course.
-        </p>
+        <p>Sandbox course created. This course is provided for the sole use of the instructor who created it. Other users cannot be enrolled in Sandbox courses. If you have the need for a co-curricular course with enrollment permissions, please fill out this request form: <a href="https://ucdenverdata.formstack.com/forms/cocurricularrequest" target="_blank">https://ucdenverdata.formstack.com/forms/cocurricularrequest</a>.</p>
+        <p><a href='@string.Format($"{Model.BaseUrl}courses")' target="_parent">Go to Courses Page</a> and accept course invitation.</p>
     }
 </div>
